@@ -1,0 +1,15 @@
+{
+  "name": "prjblognode",
+  "version": "1.0.0",
+  "description": "Trabalho para disciplina de desenvolvimento web em node",
+  "main": "app.js",
+  "dependencies": {
+    "mysql": "^2.17.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Mayk Henrique",
+  "license": "ISC"
+}
