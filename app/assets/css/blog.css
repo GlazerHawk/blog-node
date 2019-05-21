@@ -1,41 +1,50 @@
+body {
+	background-image: linear-gradient(#80ccff, #8080ff);
+	background-repeat: no-repeat;
+	height: 100vh;
+}
+
 .mainPage{
 	margin-left: 5%;
 	margin-right: 5%;
 }
 
-.miniPost{
-	margin:0px;
+.miniPost{	
 	paddin:0px;
 }
 
-.miniPost > .card-body> .row> img{
+.space-btw{
+	margin:5px;
+}
+
+.miniPost > .card-body> .row>div> img{
 	border-radius: 5px;
 	width:128px;
 	height:128px;
 }
 
 .box {
-  height: 4.5em;
-  overflow: hidden;
+	height: 4.5em;
+	overflow: hidden;
 }
 
 /* necessary plugin styles */
 .ellip {
-  display: block;
-  height: 100%;
+	display: block;
+	height: 100%;
 }
 
 .ellip-line {
-  display: inline-block;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-  word-wrap: normal;
+	display: inline-block;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	word-wrap: normal;
 }
 
 .ellip,
 .ellip-line {
-  position: relative;
-  overflow: hidden;
-  max-width: 100%;
+	position: relative;
+	overflow: hidden;
+	max-width: 100%;
 }
 

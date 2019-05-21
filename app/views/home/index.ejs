@@ -26,7 +26,7 @@
 				<a class="navbar-brand">Blog DSW</a>
 			</div>
 			<div class="col-4 d-flex justify-content-end align-items-center">
-				<a class="btn btn-sm btn-outline-secondary" href="#">Subscribe</a>
+				<a class="btn btn-sm btn-outline-secondary" href="/cadastro/usuario">Subscribe</a>
 				<a class="btn btn-sm btn-outline-secondary" href="#">Sign up</a>
 			</div>
 		</nav>
@@ -41,16 +41,18 @@
 		</div>			
 	</header>
 	<section id="home-posts" class="mainPage">			
-		<div class="row">
+		<div class="row d-flex justify-content-center">
 			<% for(let i=0; i < posts.length; i++) {%>
-			<div class="card col-md-4 miniPost">					
+			<div class="card col-md-3 miniPost space-btw">					
 				<div class="card-header">
 					<h5 ><%= posts[i].TITULO %></h5>
 				</div>
 				<div class="card-body">
 					<div class="row">
-						<img src="/dbImages/<%= posts[i].IMAGE_PATH %>" alt="Girl in a jacket">
-						<div class="col-md-8">		
+						<div class="col-md-4 space-btw">
+							<img src="/dbImages/<%= posts[i].IMAGE_PATH %>" alt="Miniatura post">
+						</div>
+						<div class="col-md-7 space-btw">		
 							<div class="mb-auto resumo-post box box--fixed"><%= posts[i].POST %></div>
 							<a href="#" class="stretched-link">Continue reading</a>
 						</div>

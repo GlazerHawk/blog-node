@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="author" content="Mayk HSM - mayk.hsmdeveloper@gmail.com">
+  <title>Blog Template - Mayk</title>
+  <!-- Inclusão arquivos de estilo css -->
+  <link href="/assets/css/bootstrap.css" rel="stylesheet">
+  <link href="/assets/css/blog.css" rel="stylesheet">
+
+
+  <!-- Inclusão arquivos js -->
+  <script src="/assets/js/jquery.js"></script>
+  <script src="/assets/js/bootstrap.js"></script>
+  <script src="/assets/js/blog-general.js"></script>
+
+</head>
+<body>
+  <header class="blog-header py-3">
+    <nav class="navbar navbar-light bg-light justify-content-between">
+      <div class="col-4 d-flex justify-content-start align-items-center">
+        <a class="btn btn-sm btn-outline-secondary" href="/">Voltar</a>
+      </div>
+      <div class="col-4 d-flex justify-content-center align-items-center">
+        <a class="navbar-brand">Blog DSW</a>
+      </div>      
+      <div class="col-4 d-flex justify-content-end align-items-center">
+
+        <a class="btn btn-sm btn-outline-secondary" href="#">Sign up</a>
+      </div>
+    </nav>
+    <hr>
+  </header>
+  <div class="container">
+    <form class="justify-content-center">
+      <div class="form-row  justify-content-center">
+        <div class="col-md-4 mb-3">
+          <label>Nome</label>
+          <input type="text" class="form-control" id="nome" placeholder="Nome">
+        </div>
+        <div class="col-md-4 mb-3">
+          <label >E-mail</label>
+          <div class="input-group">
+            <div class="input-group-prepend">
+              <span class="input-group-text">@</span>
+            </div>
+            <input type="text" class="form-control" id="email" placeholder="E-mail" aria-describedby="inputGroupPrepend">
+          </div>
+        </div>
+      </div>
+      <div class="form-row justify-content-center">
+        <div class="col-md-4 mb-3">
+          <label >Senha</label>
+          <input type="password" class="form-control" id="senha" placeholder="Senha">
+        </div>
+        <div class="col-md-4 mb-3">
+          <label>Confirmação de senha</label>
+          <input type="password" class="form-control" id="confimaSenha" placeholder="Senha">
+        </div>
+      </div>
+      <div class="form-row justify-content-center">
+        <div class="col-md-8 mb-3">
+          <button class="btn btn-primary" type="submit">Enviar</button>
+        </div>        
+      </div>
+    </form>
+  </div>
+</body>
