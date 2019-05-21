@@ -4,6 +4,17 @@ body {
 	height: 100vh;
 }
 
+.div-img-preview{
+	padding: 10px;
+	max-height: 300px!important;
+	max-width: : 300px!important;
+	margin: 5px;
+}
+
+.padding-raw{
+	padding: 0px;
+}
+
 .mainPage{
 	margin-left: 5%;
 	margin-right: 5%;
@@ -18,6 +29,12 @@ body {
 }
 
 .miniPost > .card-body> .row>div> img{
+	border-radius: 5px;
+	width:128px;
+	height:128px;
+}
+
+.miniPost > div>  .card-body> .row>div> img{
 	border-radius: 5px;
 	width:128px;
 	height:128px;
@@ -46,5 +63,9 @@ body {
 	position: relative;
 	overflow: hidden;
 	max-width: 100%;
+}
+a.btn-tool:hover{
+	background-color: #7070db;
+	color: #ffffff;
 }
 

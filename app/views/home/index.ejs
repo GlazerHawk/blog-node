@@ -27,7 +27,7 @@
 			</div>
 			<div class="col-4 d-flex justify-content-end align-items-center">
 				<a class="btn btn-sm btn-outline-secondary" href="/cadastro/usuario">Subscribe</a>
-				<a class="btn btn-sm btn-outline-secondary" href="#">Sign up</a>
+				<a class="btn btn-sm btn-outline-secondary" href="/blog/homeAdmin">Sign up</a>
 			</div>
 		</nav>
 		<hr>
@@ -49,10 +49,10 @@
 				</div>
 				<div class="card-body">
 					<div class="row">
-						<div class="col-md-4 space-btw">
-							<img src="/dbImages/<%= posts[i].IMAGE_PATH %>" alt="Miniatura post">
+						<div class="col-md-5 space-btw">
+							<img src="/dbImages/<%= posts[i].IMAGE_PATH %>" alt="Miniatura post" class="img-thumbnail">
 						</div>
-						<div class="col-md-7 space-btw">		
+						<div class="col-md-6 space-btw">		
 							<div class="mb-auto resumo-post box box--fixed"><%= posts[i].POST %></div>
 							<a href="#" class="stretched-link">Continue reading</a>
 						</div>
