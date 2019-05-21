@@ -4,5 +4,38 @@
 }
 
 .miniPost{
-	margin:5px;
+	margin:0px;
+	paddin:0px;
 }
+
+.miniPost > .card-body> .row> img{
+	border-radius: 5px;
+	width:128px;
+	height:128px;
+}
+
+.box {
+  height: 4.5em;
+  overflow: hidden;
+}
+
+/* necessary plugin styles */
+.ellip {
+  display: block;
+  height: 100%;
+}
+
+.ellip-line {
+  display: inline-block;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  word-wrap: normal;
+}
+
+.ellip,
+.ellip-line {
+  position: relative;
+  overflow: hidden;
+  max-width: 100%;
+}
+

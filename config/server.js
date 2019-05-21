@@ -7,6 +7,7 @@ app.set('view engine', 'ejs');
 app.set('views', './app/views');
 app.set('assets', './app/assets');
 app.use('/assets', express.static('./app/assets'));
+app.use('/dbImages', express.static('./app/assets/dbImages'));
 
 app.listen(port,function(){
 	console.log('Servidor rodando com express na porta',port);
