@@ -1,0 +1,116 @@
+
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="author" content="Mayk HSM - mayk.hsmdeveloper@gmail.com">
+	<title>Blog Template - Mayk</title>
+	<!-- Inclusão arquivos de estilo css -->
+	<link href="/assets/css/bootstrap.css" rel="stylesheet">
+	<link href="/assets/css/blog.css" rel="stylesheet">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
+
+
+	<!-- Inclusão arquivos js -->
+	<script src="/assets/js/jquery.js"></script>
+	<script src="/assets/js/bootstrap.js"></script>
+	<script src="/assets/js/blog-general.js"></script>
+
+
+</head>
+<body>
+	<header class="blog-header py-3">
+		<nav class="navbar navbar-light bg-light justify-content-between">
+			<div class="col-4 d-flex justify-content-center align-items-center">
+			</div>
+			<div class="col-4 d-flex justify-content-center align-items-center">
+				<a class="navbar-brand">Blog DSW</a>
+			</div>
+			<div class="col-4 d-flex justify-content-end align-items-center">
+				<a class="btn btn-sm btn-outline-secondary" href="/">Sign out</a>
+			</div>
+		</nav>
+		<hr>
+		<div class="nav-scroller py-1 mb-2">
+			<nav class="nav d-flex justify-content-center">
+				<a class="p-2 text-muted" href="#">Home</a>
+				<a class="p-2 text-muted" href="#">Mundo</a>
+				<a class="p-2 text-muted" href="#">Tecnologia</a>
+				<a class="p-2 text-muted" href="#">Cultura</a>
+			</nav>
+		</div>			
+	</header>
+	<section id="home-posts" class="mainPage">
+		<div class="row justify-content-center">
+			<a href="#" class="btn btn-success col-md-8" data-toggle="modal" data-target="#novoPost">Novo post</a>
+		</div>
+		<br>
+		<div id="accordion" class="row d-flex justify-content-center">
+			<% for(let i=0; i < posts.length; i++) {%>
+			<div class="card col-md-8 miniPost space-btw justify-content-center">					
+				<div class="card-header row padding-raw">
+					<div class="col-md-8 d-flex justify-content-start">
+						<h5 >
+							<button class="btn btn-link" data-toggle="collapse" data-target="#collapse<%= posts[i].ID %>" aria-expanded="true" aria-controls="collapse<%= posts[i].ID %>">
+								<%= posts[i].TITULO %>
+							</button></h5>
+						</div>
+						<div class="col-md-4 d-flex justify-content-end">
+							<a href="#" class="btn btn-tool"><i class="fas fa-eye"></i></a>
+							<a href="#" class="btn btn-tool"><i class="fas fa-edit"></i></a>
+							<a href="#" class="btn btn-tool"><i class="fas fa-trash-alt"></i></a>
+						</div>
+					</div>
+					<div id="collapse<%= posts[i].ID %>" class="collapse" aria-labelledby="headingOne" data-parent="#accordion">
+						<div class="card-body">
+							<div class="row">
+								<div class="col-md-2 space-btw">
+									<img src="/dbImages/<%= posts[i].IMAGE_PATH %>" alt="Miniatura post">
+								</div>
+								<div class="col-md-9 space-btw">		
+									<div class="mb-auto resumo-post box box--fixed"><%= posts[i].POST %></div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<% } %>
+			</div>			
+		</section>
+		<footer class="blog-footer">
+		</footer>
+
+		<div class="modal fade" id="novoPost" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+		aria-hidden="true">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+				<div class="modal-header text-center">
+					<h4 class="modal-title w-100 font-weight-bold">Novo Post</h4>
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+				<div class="modal-body mx-3">
+					<form action="{{route('create.newPost',['idUsuarioLogado' => $idUsuarioLogado])}}">
+						<div class="md-form mb-5">
+							<i class="fas fa-envelope prefix grey-text"></i>
+							<label data-error="wrong" data-success="right">Título</label>
+							<input id="titulo" name="titulo" class="form-control validate">
+
+						</div>
+						<div class="md-form mb-4">
+							<i class="fas fa-lock prefix grey-text"></i>
+							<label data-error="wrong" data-success="right" for="defaultForm-pass">Conteúdo</label>
+							<textarea id="content" name="content"></textarea>         
+						</div>
+					</div>
+					<div class="modal-footer d-flex justify-content-center col-md-12">		
+						<button type="submit" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+						<button type="submit" class="btn btn-primary">Salvar</button>
+					</div>        
+				</form>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

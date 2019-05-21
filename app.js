@@ -1,6 +1,7 @@
 let app = require('./config/server');
-let rotaHome = require('./app/routes/home');
+let rotaLandPage = require('./app/routes/home');
 let cadastroNovoUsuario = require('./app/routes/cadastroNovoUsuario');
+let blogHomeAdmin = require('./app/routes/homeAdmin');
 
 
 
@@ -10,9 +11,9 @@ let professores = require('./app/routes/professores');
 
 
 
-rotaHome(app);
+rotaLandPage(app);
 cadastroNovoUsuario(app);
-
+blogHomeAdmin(app);
 
 
 estudantes(app);
