@@ -4,6 +4,13 @@ body {
 	height: 100vh;
 }
 
+.div-img-preview{
+	padding: 10px;
+	max-height: 300px!important;
+	max-width: : 300px!important;
+	margin: 5px;
+}
+
 .padding-raw{
 	padding: 0px;
 }
