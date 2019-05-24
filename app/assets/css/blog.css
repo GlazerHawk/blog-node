@@ -3,6 +3,12 @@
 	background-repeat: no-repeat;
 	min-height: 100vh;
 	min-width: 100vw;
+	margin: 0px;
+	padding: 0px;
+}
+
+.align-text-justify{
+	text-align: justify;
 }
 
 .div-img-preview{

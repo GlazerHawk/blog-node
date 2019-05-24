@@ -1,0 +1,10 @@
+.fullPost{
+
+}
+
+.fullPost>.row>img{
+	max-width: 500px;
+	max-height: 500px;
+	min-height: 300px;
+	min-width: 300px;
+}
