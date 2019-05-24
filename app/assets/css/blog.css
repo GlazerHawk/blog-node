@@ -1,7 +1,8 @@
-body {
+.full-bg {
 	background-image: linear-gradient(#80ccff, #8080ff);
 	background-repeat: no-repeat;
-	height: 100vh;
+	min-height: 100vh;
+	min-width: 100vw;
 }
 
 .div-img-preview{

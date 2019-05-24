@@ -18,49 +18,51 @@
 
 </head>
 <body>
-	<header class="blog-header py-3">
-		<nav class="navbar navbar-light bg-light justify-content-between">
-			<div class="col-4 d-flex justify-content-center align-items-center">
-			</div>
-			<div class="col-4 d-flex justify-content-center align-items-center">
-				<a class="navbar-brand">Blog DSW</a>
-			</div>
-			<div class="col-4 d-flex justify-content-end align-items-center">
-				<a class="btn btn-sm btn-outline-secondary" href="/cadastro/usuario">Subscribe</a>
-				<a class="btn btn-sm btn-outline-secondary" href="/blog/homeAdmin">Sign up</a>
-			</div>
-		</nav>
-		<hr>
-		<div class="nav-scroller py-1 mb-2">
-			<nav class="nav d-flex justify-content-center">
-				<a class="p-2 text-muted" href="#">Home</a>
-				<a class="p-2 text-muted" href="#">Mundo</a>
-				<a class="p-2 text-muted" href="#">Tecnologia</a>
-				<a class="p-2 text-muted" href="#">Cultura</a>
-			</nav>
-		</div>			
-	</header>
-	<section id="home-posts" class="mainPage">			
-		<div class="row d-flex justify-content-center">
-			<% for(let i=0; i < posts.length; i++) {%>
-			<div class="card col-md-3 miniPost space-btw">					
-				<div class="card-header">
-					<h5 ><%= posts[i].TITULO %></h5>
+	<section class="full-bg">
+		<header class="blog-header py-3">
+			<nav class="navbar navbar-light bg-light justify-content-between">
+				<div class="col-4 d-flex justify-content-center align-items-center">
 				</div>
-				<div class="card-body">
-					<div class="row">
-						<div class="col-md-5 space-btw">
-							<img src="/dbImages/<%= posts[i].IMAGE_PATH %>" alt="Miniatura post" class="img-thumbnail">
-						</div>
-						<div class="col-md-6 space-btw">		
-							<div class="mb-auto resumo-post box box--fixed"><%= posts[i].POST %></div>
-							<a href="#" class="stretched-link">Continue reading</a>
+				<div class="col-4 d-flex justify-content-center align-items-center">
+					<a class="navbar-brand">Blog DSW</a>
+				</div>
+				<div class="col-4 d-flex justify-content-end align-items-center">
+					<a class="btn btn-sm btn-outline-secondary" href="/cadastro/usuario">Subscribe</a>
+					<a class="btn btn-sm btn-outline-secondary" href="/blog/homeAdmin">Sign up</a>
+				</div>
+			</nav>
+			<hr>
+			<div class="nav-scroller py-1 mb-2">
+				<nav class="nav d-flex justify-content-center">
+					<a class="p-2 text-muted" href="#">Home</a>
+					<a class="p-2 text-muted" href="#">Mundo</a>
+					<a class="p-2 text-muted" href="#">Tecnologia</a>
+					<a class="p-2 text-muted" href="#">Cultura</a>
+				</nav>
+			</div>			
+		</header>
+		<section id="home-posts" class="mainPage">			
+			<div class="row d-flex justify-content-center">
+				<% for(let i=0; i < posts.length; i++) {%>
+				<div class="card col-md-3 miniPost space-btw">					
+					<div class="card-header">
+						<h5 ><%= posts[i].TITULO %></h5>
+					</div>
+					<div class="card-body">
+						<div class="row">
+							<div class="col-md-5 space-btw">
+								<img src="/dbImages/<%= posts[i].IMAGE_PATH %>" alt="Miniatura post" class="img-thumbnail">
+							</div>
+							<div class="col-md-6 space-btw">		
+								<div class="mb-auto resumo-post box box--fixed"><%= posts[i].POST %></div>
+								<a href="/viewPost?id=<%= posts[i].ID %>" class="stretched-link">Continue reading</a>
+							</div>
 						</div>
 					</div>
 				</div>
-			</div>
-			<% } %>
-		</div>			
+				<% } %>
+			</div>			
+		</section>
 	</section>
 	<footer class="blog-footer">
 	</footer>
