@@ -4,6 +4,7 @@
   "description": "Trabalho para disciplina de desenvolvimento web em node",
   "main": "app.js",
   "dependencies": {
+    "body-parser": "^1.19.0",
     "consign": "^0.1.6",
     "mysql": "^2.17.1"
   },

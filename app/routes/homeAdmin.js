@@ -3,7 +3,7 @@ module.exports = function(app){
 		let connection = app.config.dbConnection();
 		let sql = 'select * from POST';
 		connection.query(sql, function (error, result) {
-			res.render('home/home',{posts:result,qtdPosts:3});
+			res.render('home/homeAdmin',{posts:result});
 		});
 	});
 }
