@@ -57,16 +57,20 @@
 								</button></h5>
 							</div>
 							<div class="col-md-4 d-flex justify-content-end">
-								<a href="#" class="btn btn-tool"><i class="fas fa-eye"></i></a>
+								<a href="/viewPost?id=<%= posts[i].ID %>" class="btn btn-tool"><i class="fas fa-eye"></i></a>
 								<a href="/post/edit?id=<%= posts[i].ID %>" class="btn btn-tool"><i class="fas fa-edit"></i></a>
-								<a href="#" class="btn btn-tool"><i class="fas fa-trash-alt"></i></a>
+								<a href="/post/delete?id=<%= posts[i].ID %>" class="btn btn-tool class="btn btn-tool"><i class="fas fa-trash-alt"></i></a>
 							</div>
 						</div>
 						<div id="collapse<%= posts[i].ID %>" class="collapse" aria-labelledby="headingOne" data-parent="#accordion">
 							<div class="card-body">
 								<div class="row">
 									<div class="col-md-2 space-btw">
+										<% if(posts[i].IMAGE_PATH!=''){%>
 										<img src="/dbImages/<%= posts[i].IMAGE_PATH %>" alt="Miniatura post" class="img-thumbnail">
+										<%}else{%>
+										<img src="/dbImages/Image-not-found.png" alt="Image not found" class="img-thumbnail">
+										<%}%>
 									</div>
 									<div class="col-md-9 space-btw">		
 										<div class="mb-auto resumo-post box box--fixed"><%= posts[i].POST %></div>
@@ -90,7 +94,7 @@
 								<span aria-hidden="true">&times;</span>
 							</button>
 						</div>
-						<form action="/post/create" method="get">
+						<form action="/post/create" method="post">
 							<div class="modal-body">
 								<div class="form-group">
 									<label class="col-form-label">Título:</label>

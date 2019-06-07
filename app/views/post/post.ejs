@@ -46,7 +46,11 @@
 				<h2 class="col-md-6 text-center"><%= post[0].TITULO %></h2>
 			</div>
 			<div class="row d-flex justify-content-center">
-				<img src="/dbImages/<%= post[0].IMAGE_PATH %>" alt="post[0].IMAGE_PATH" class="img-thumbnail">
+				<% if(post[0].IMAGE_PATH!=''){%>
+				<img src="/dbImages/<%= post[0].IMAGE_PATH %>" alt="Miniatura post" class="img-thumbnail">
+				<%}else{%>
+				<img src="/dbImages/Image-not-found.png" alt="Image not found" class="img-thumbnail">
+				<%}%>
 			</div>
 			<div class="row d-flex justify-content-center align-text-justify">
 				<p class="col-md-6"><%= post[0].POST %></p>

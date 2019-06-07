@@ -51,7 +51,11 @@
 					<div class="card-body">
 						<div class="row">
 							<div class="col-md-5 space-btw">
+								<% if(posts[i].IMAGE_PATH!=''){%>
 								<img src="/dbImages/<%= posts[i].IMAGE_PATH %>" alt="Miniatura post" class="img-thumbnail">
+								<%}else{%>
+								<img src="/dbImages/Image-not-found.png" alt="Image not found" class="img-thumbnail">
+								<%}%>
 							</div>
 							<div class="col-md-6 space-btw">		
 								<div class="mb-auto resumo-post box box--fixed"><%= posts[i].POST %></div>

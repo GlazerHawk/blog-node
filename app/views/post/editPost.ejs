@@ -49,7 +49,9 @@
 				</div>
 				<br>
 				<div class="row d-flex justify-content-center">
-					<img src="/dbImages/<%= post[0].IMAGE_PATH %>" alt="post[0].IMAGE_PATH" class="img-thumbnail">
+					<% if(post[0].IMAGE_PATH!=''){%>
+					<img src="/dbImages/<%= post[0].IMAGE_PATH %>" alt="Miniatura post" class="img-thumbnail">
+					<%}%>
 				</div>
 				<br>
 				<div class="row d-flex justify-content-center align-text-justify">
