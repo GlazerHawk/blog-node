@@ -32,14 +32,6 @@
 				</div>
 			</nav>
 			<hr>
-			<div class="nav-scroller py-1 mb-2">
-				<nav class="nav d-flex justify-content-center">
-					<a class="p-2 text-muted" href="#">Home</a>
-					<a class="p-2 text-muted" href="#">Mundo</a>
-					<a class="p-2 text-muted" href="#">Tecnologia</a>
-					<a class="p-2 text-muted" href="#">Cultura</a>
-				</nav>
-			</div>			
 		</header>
 		<section id="home-posts" class="fullPost justify-content-between col-md-12">
 			<div class="row d-flex justify-content-center align-text-justify">
@@ -48,13 +40,40 @@
 			<div class="row d-flex justify-content-center">
 				<% if(post[0].IMAGE_PATH!=''){%>
 				<img src="/dbImages/<%= post[0].IMAGE_PATH %>" alt="Miniatura post" class="img-thumbnail">
-				<%}else{%>
-				<img src="/dbImages/Image-not-found.png" alt="Image not found" class="img-thumbnail">
 				<%}%>
 			</div>
 			<div class="row d-flex justify-content-center align-text-justify">
 				<p class="col-md-6"><%= post[0].POST %></p>
 			</div>
+			<section class="fullPost justify-content-between col-md-12">
+
+				<form action="comment/create" method="post" class="row d-flex justify-content-center align-text-justify">
+					<div class="col-md-6 d-flex justify-content-center">
+						<textarea name="COMMENT" style="width: 100%;">
+
+						</textarea>
+					</div>
+					<div class="col-md-12 d-flex justify-content-center">
+						<button type="submit">Enviar Comentário</button>
+					</div>
+				</form>
+				<br><br>
+				<div class="container" class="row d-flex justify-content-center align-text-justify">
+					<div class="row d-flex justify-content-center">
+						<div class="comments-list col-md-10">
+							<% for(let i=0; i < comments.length; i++) {%>
+							<div class="card">
+								<div class="card-body">
+									<h4 class="media-heading user_name"><%= comments[i].OWNER %></h4>
+									<%= comments[i].CONTENT %>
+								</div>
+							</div>
+							<br>
+							<% } %>
+						</div>
+					</div>
+				</div>
+			</section>
 		</section>
 		<footer class="blog-footer">
 		</footer>

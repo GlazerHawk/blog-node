@@ -18,4 +18,8 @@ module.exports = function(app){
 	app.post('/post/update',function(req,res){
 		app.app.controllers.PostController.updatePost(app,req,res);
 	});
+
+	app.post('/comment/create',function(req,res){
+		app.app.controllers.CommentController.createComment(app,req,res);
+	});
 }

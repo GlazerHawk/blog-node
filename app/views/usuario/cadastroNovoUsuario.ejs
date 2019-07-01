@@ -32,11 +32,11 @@
       <hr>
     </header>
     <div class="container">
-      <form class="justify-content-center">
+      <form action="/user/create" method="post" class="justify-content-center">
         <div class="form-row  justify-content-center">
           <div class="col-md-4 mb-3">
             <label>Nome</label>
-            <input type="text" class="form-control" id="nome" placeholder="Nome">
+            <input type="text" class="form-control" id="NAME" placeholder="Nome" name="NAME">
           </div>
           <div class="col-md-4 mb-3">
             <label >E-mail</label>
@@ -44,18 +44,18 @@
               <div class="input-group-prepend">
                 <span class="input-group-text">@</span>
               </div>
-              <input type="text" class="form-control" id="email" placeholder="E-mail" aria-describedby="inputGroupPrepend">
+              <input type="text" class="form-control" id="EMAIL" placeholder="E-mail" aria-describedby="inputGroupPrepend" name="EMAIL">
             </div>
           </div>
         </div>
         <div class="form-row justify-content-center">
           <div class="col-md-4 mb-3">
             <label >Senha</label>
-            <input type="password" class="form-control" id="senha" placeholder="Senha">
+            <input type="password" class="form-control" id="PASSWORD" placeholder="Senha" name="PASSWORD">
           </div>
           <div class="col-md-4 mb-3">
             <label>Confirmação de senha</label>
-            <input type="password" class="form-control" id="confimaSenha" placeholder="Senha">
+            <input type="password" class="form-control" id="CONF_PASS" placeholder="Senha">
           </div>
         </div>
         <div class="form-row justify-content-center">

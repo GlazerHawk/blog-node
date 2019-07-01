@@ -4,9 +4,20 @@ module.exports.viewPost = function (app, req, res) {
 	let postDAO = new app.app.models.DAO.PostDAO(connection);
 	let url  = require("url");
 	let params = url.parse(req.url, true);
-	let id = params.query.id;
-	postDAO.getPostById(id, function(error,result){
-		res.render('post/post',{post:result});
+	let postID = params.query.id;
+	postDAO.getPostById(postID, function(error,resultPost){
+		req.session.postID = postID;
+		console.log("USER ID PostController:"+req.session.userID);
+		console.log("POST ID PostController:"+req.session.postID);
+
+		let commentDAO = new  app.app.models.DAO.CommentDAO(connection);
+		commentDAO.getCommentsByPost(postID,function(error,resultComments){
+
+			if(req.session.autorizado)
+				res.render('post/post',{post:resultPost, comments:resultComments});
+			else
+				res.render('post/anonymousPost',{post:resultPost, comments:resultComments});
+		});
 	});
 };
 
