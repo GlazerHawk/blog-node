@@ -18,11 +18,8 @@
 	}
 
 	PostDAO.prototype.deletePost = function(id,callback){
-
-		let sql = 'DELETE FROM COMMENTS WHERE ID_POST='+id;
-		this.connection.query(sql,callback);
-
-		sql = 'DELETE FROM POST WHERE ID='+id;
+		let sql = 'DELETE FROM POST WHERE ID='+id;
+		
 		this.connection.query(sql,callback);
 	}
 

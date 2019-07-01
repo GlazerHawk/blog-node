@@ -22,4 +22,8 @@ module.exports = function(app){
 	app.post('/comment/create',function(req,res){
 		app.app.controllers.CommentController.createComment(app,req,res);
 	});
+
+	app.get('/comment/delete',function(req,res){
+		app.app.controllers.CommentController.deleteComment(app,req,res);
+	});
 }

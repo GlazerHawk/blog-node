@@ -28,7 +28,7 @@
 					<a class="navbar-brand">Blog DSW</a>
 				</div>
 				<div class="col-4 d-flex justify-content-end align-items-center">
-					<a class="btn btn-sm btn-outline-secondary" href="/">Sign out</a>
+					<a class="btn btn-sm btn-outline-secondary" href="/user/logout">Sign out</a>
 				</div>
 			</nav>
 			<hr>
@@ -64,8 +64,18 @@
 							<% for(let i=0; i < comments.length; i++) {%>
 							<div class="card">
 								<div class="card-body">
-									<h4 class="media-heading user_name"><%= comments[i].OWNER %></h4>
-									<%= comments[i].CONTENT %>
+									<h4 class="media-heading user_name"><%= comments[i].OWNER_NAME %></h4>
+									<hr>
+									<div class="row">
+										<div class="col-md-10 d-flex justify-content-start">
+											<%= comments[i].CONTENT %>
+										</div>
+										<div class="col-md-2 d-flex justify-content-end">
+											<% if(comments[i].OWNER_ID == loggedUser) {%>
+											<a href="/comment/delete?id=<%= comments[i].ID %>" class="btn btn-tool class="btn btn-tool"><i class="fas fa-trash-alt"></i></a>
+											<% } %>
+										</div>
+									</div>
 								</div>
 							</div>
 							<br>

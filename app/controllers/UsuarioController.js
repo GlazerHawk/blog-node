@@ -1,3 +1,12 @@
+module.exports.logout = function(app, req,res){
+    req.session.autorizado=false;
+    req.session.userID=undefined;
+    req.session.postID=undefined;
+
+    res.redirect('/');
+};
+
+
 module.exports.authenticate = function(app, req,res){
 	let user = req.body;
 

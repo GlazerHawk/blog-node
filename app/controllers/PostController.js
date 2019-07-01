@@ -14,7 +14,7 @@ module.exports.viewPost = function (app, req, res) {
 		commentDAO.getCommentsByPost(postID,function(error,resultComments){
 
 			if(req.session.autorizado)
-				res.render('post/post',{post:resultPost, comments:resultComments});
+				res.render('post/post',{post:resultPost, comments:resultComments, loggedUser:req.session.userID});
 			else
 				res.render('post/anonymousPost',{post:resultPost, comments:resultComments});
 		});
@@ -33,12 +33,20 @@ module.exports.createPost = function(app, req,res){
 
 module.exports.deletePost = function(app, req,res){
 	let connection = app.config.dbConnection();
-	let postDAO = new app.app.models.DAO.PostDAO(connection);
+	
+	let commentDAO = new app.app.models.DAO.CommentDAO(connection);
+
+
 	let url  = require("url");
 	let params = url.parse(req.url, true);
 	let id = params.query.id;
-	postDAO.deletePost(id,function(error, result){
-		res.redirect('/blog/homeAdmin');
+	commentDAO.deleteAllCommentsByPost(id, function(error,resultComments){
+		console.log("RESULT DELET: "+resultComments);
+		let postDAO = new app.app.models.DAO.PostDAO(connection);
+		postDAO.deletePost(id,function(error, resultPosts){
+			console.log("RESULT DELET: "+resultPosts);
+			res.redirect('/blog/homeAdmin');
+		})
 	})
 };
 
